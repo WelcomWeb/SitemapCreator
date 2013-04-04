@@ -17,7 +17,7 @@ Run SitemapCreator and write all domain-local URLs of `http://www.MyDomain.com` 
 sitemap.creator.py &lt;HOST&gt; &lt;FILENAME&gt; [TIMEOUT] [VERBOSE]
 
 ### The optional arguments
-Some servers are configured to block a high amount of hits from one and the same IP (to prevent DDoS), so by sending SitemapCreator a timeout value we can delay each request to prevent the tool from being blocked by the server. The specified timeout should be in seconds, so with the following parameters SitemapCreator delays each request by 0.5 seconds (500ms):
+Some servers are configured to block a high amount of hits from one and the same IP (to prevent DoS attacks), so by sending SitemapCreator a timeout value we can delay each request to prevent the tool from being blocked by the server. The specified timeout should be in seconds, so with the following parameters SitemapCreator delays each request by 0.5 seconds (500ms):
 
     $ python sitemap.creator.py http://www.mydomain.com MySitemap.txt 0.5
 
