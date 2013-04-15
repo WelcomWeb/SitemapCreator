@@ -25,3 +25,5 @@ Some servers are configured to block a high amount of hits from one and the same
 By default SitemapCreator is silent, and doesn't tell you what it's doing - but by adding a parameter we can tell it to be verbose;
 
     $ python sitemap.creator.py http://www.mydomain.com MySitemap.txt 0.5 true
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/c9c9680aafd0e7cd4f3f763b50e5b691 "githalytics.com")](http://githalytics.com/WelcomWeb/SitemapCreator)
