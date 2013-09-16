@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: UTF-8
 
 """
 Author: Björn Wikström <bjorn@welcom.se>
@@ -40,6 +41,7 @@ class Sitemap:
 	""" Parses, reads and stores all anchor links to pages for the same domain as
 		the entry point """
 	def __init__(self, entry, outputter, timeout = False, verbose = False):
+		self.entry = entry
 		self.paths = [entry]
 		self.output = outputter
 		self.timeout = timeout
@@ -91,9 +93,15 @@ class Sitemap:
 		for match in matches:
 			parsed = urlparse(match)
 
+			if parsed.scheme == "":
+				if match[0] == '?':
+					continue
+				
+				parsed = urlparse(self.entry + match)
+
 			if not parsed.scheme in ["http", "https", "shttp"]:
 				continue
-
+			
 			current = urlparse(path)
 
 			host = parsed.netloc
